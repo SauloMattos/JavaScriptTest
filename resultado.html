@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-    <title> Treinando JS </title>
+    <title> Resultado </title>
     
     <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
 
     <script>
-        var dados = JSON.stringify($('input').val());
-        sessionStorage.setItem('chave', dados );
+        var dadosArquivados = JSON.parse(sessionStorage.getItem('chave'));
     </script>
 </head>
 

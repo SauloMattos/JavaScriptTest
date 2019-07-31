@@ -1,6 +1,7 @@
 /* QUANDO O PLAYER1 SELECIONA SUA JOGADA */
-var p1 = 0;
-var p2 = 0;
+p1 = 0;
+p2 = 0;
+result = 0;
 
 function mudarImagem1(){
     document.getElementById('pedra').src='imagens/Pedra_ok.jpg'
@@ -11,14 +12,16 @@ function mudarImagem1(){
     p1 = "pedra";
     p2 = document.getElementById('aleatorio').innerHTML
 
-    if(p2 == 0){
-        console.log("Empate")
-    }else if(p2 == 1){
-        console.log("Derrota")
-    }else if(p2 == 2){
-        console.log("Vitoria")
-}
-
+    if(p1 == "pedra" && p2 == 0){
+        result = "Empate"
+        document.getElementById('resultado').value = result
+    }else if(p1 == "pedra" && p2 == 1){
+        result = "Derrota"
+        document.getElementById('resultado').value = result
+    }else if(p1 == "pedra" && p2 == 2){
+        result = "Vitoria"
+        document.getElementById('resultado').value = result
+    }
 }
 
 function mudarImagem2(){
@@ -30,13 +33,16 @@ function mudarImagem2(){
     p1 = "papel";
     p2 = document.getElementById('aleatorio').innerHTML
 
-    if(p2 == 0){
-        console.log("Vitoria")
-    }else if(p2 == 1){
-        console.log("Empate")
-    }else if(p2 == 2){
-        console.log("Derrota")
-    }
+    if(p1 == "papel" && p2 == 0){
+        result = "Vitoria"
+        document.getElementById('resultado').value = result
+    }else if(p1 == "papel" && p2 == 1){
+        result = "Empate"
+        document.getElementById('resultado').value = result
+    }else if(p1 == "papel" && p2 == 2){
+        result = "Derrota"
+        document.getElementById('resultado').value = result
+    }    
 }
 
 function mudarImagem3(){
@@ -48,13 +54,28 @@ function mudarImagem3(){
     p1 = "tesoura";
     p2 = document.getElementById('aleatorio').innerHTML
 
-    if(p2 == 0){
-        console.log("Derrota")
-    }else if(p2 == 1){
-        console.log("Vitoria")
-    }else if(p2 == 2){
-        console.log("Empate")
+    if(p1 == "tesoura" && p2 == 0){
+        result = "Derrota"
+        document.getElementById('resultado').value = result
+    }else if(p1 == "tesoura" && p2 == 1){
+        result = "Vitoria"
+        document.getElementById('resultado').value = result
+    }else if(p1 == "tesoura" && p2 == 2){
+        result = "Empate"
+        document.getElementById('resultado').value = result
     }
 }
 
 /* CALCULAR JOGADA DO PLAYER 1 COM PLAYER2 (WHO WINS?) */
+
+function jokenpo(){
+    document.getElementById('resultado').innerHTML
+    
+    if(result == "Vitoria"){
+        alert("Voce Ganhou!")
+    }else if(result == "Empate"){
+        alert("Voces empataram!")
+    }else if(result == "Derrota"){
+        alert("Voce Perdeu!")
+    }
+}
